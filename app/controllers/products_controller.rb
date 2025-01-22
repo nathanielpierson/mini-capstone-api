@@ -15,6 +15,22 @@ class ProductsController < ApplicationController
       image_url: params[:image_url],
       description: params[:description]
       )
+      if @product.save
       render :show
+      else
+        render json: { message: "oops" }
+      end
+  end
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.update(
+      name: params[:name],
+      price: params[:price],
+      image_url: params[:image_url],
+      description: params[:description] || @product.description
+      )
+      render :show
+  end
+  def delete
   end
 end
