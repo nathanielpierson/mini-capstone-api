@@ -4,7 +4,11 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :name, format: { with: /\A[a-zA-Z]+\z/,
   message: "only allows letters" }
+  belongs_to :supplier
+  has_many :images
 end
+
+
 def is_discounted?
   if @product.price <= 10
     true
