@@ -3,23 +3,24 @@ class ProductsController < ApplicationController
     @products = Product.all
     render :index
   end
-  def show
-    the_id = params[:id]
-    @product = Product.find_by(id: the_id)
-    render :show
-  end
   def create
     @product = Product.create(
       name: params[:name],
       price: params[:price],
       image_url: params[:image_url],
-      description: params[:description]
+      description: params[:description],
+      supplier_id: params[:supplier_id]
       )
       if @product.save
       render :show
       else
         render json: { message: "oops" }
       end
+  end
+  def show
+    the_id = params[:id]
+    @product = Product.find_by(id: the_id)
+    render :show
   end
   def update
     @product = Product.find_by(id: params[:id])
@@ -32,6 +33,6 @@ class ProductsController < ApplicationController
       )
       render :show
   end
-  def delete
+  def destroy
   end
 end

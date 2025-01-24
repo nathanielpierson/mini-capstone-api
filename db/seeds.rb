@@ -7,5 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-@product = Product.new(name: "thing", price: 4, img_url: "https://google.com")
-@product.save
+@supplier = Supplier.new(name: "gihweg", email: "vuhwelcijw", phone_number: "32roi23o8r4ur")
+@supplier.save
