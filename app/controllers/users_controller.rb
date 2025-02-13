@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     render :index
   end
   def create
-    @user = User.create(
+    user = User.create(
       name: params[:name],
       email: params[:email],
       password: params[:password],
