@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "/images" => "images#index"
   patch "/images/:id" => "images#update"
 
+  get "/users" => "users#index"
   post "/users" =>"users#create"
 
   post "/sessions" => "sessions#create"
