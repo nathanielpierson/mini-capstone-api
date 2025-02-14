@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "/products" => "products#index"
   get "/products/:id" => "products#show"
-  post "/products/new" => "products#create"
+  post "/products" => "products#create"
   patch "/products/:id" => "products#update"
 
   get "/suppliers" => "suppliers#index"
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "/sessions" => "sessions#index"
   post "/sessions" => "sessions#create"
 
+  get "/orders" => "orders#index"
   post "/orders" => "orders#create"
 
   # Defines the root path route ("/")
