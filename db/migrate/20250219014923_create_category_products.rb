@@ -1,6 +1,6 @@
-class CreateCategoryProduccts < ActiveRecord::Migration[7.2]
+class CreateCategoryProducts < ActiveRecord::Migration[7.2]
   def change
-    create_table :category_produccts do |t|
+    create_table :category_products do |t|
       t.integer :product_id
       t.integer :category_id
 
