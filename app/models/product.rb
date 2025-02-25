@@ -6,22 +6,23 @@ class Product < ApplicationRecord
   message: "only allows letters" }
   belongs_to :supplier
   has_many :images
-end
+  has_many :category_products
+  has_many :categories, through: :category_products
 
-
-def is_discounted?
-  if @product.price <= 10
-    true
-  else
-    false
-  end
-  def tax
-    taxed = @product.price * 0.09
-    taxed
-  end
-  def total
-    taxed = @product.price * 0.09
-    total = taxed + @product.price
-    total
+  def is_discounted?
+    if @product.price <= 10
+      true
+    else
+      false
+    end
+    def tax
+      taxed = @product.price * 0.09
+      taxed
+    end
+    def total
+      taxed = @product.price * 0.09
+      total = taxed + @product.price
+      total
+    end
   end
 end

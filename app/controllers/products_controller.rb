@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
       description: params[:description],
       supplier_id: params[:supplier_id]
       )
-      if @product.save x ``
+      if @product.save
       render :show
       else
         render json: { message: "oops" }
