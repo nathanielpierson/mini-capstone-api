@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   patch "/orders/:id" => "orders#update"
   delete "/orders/:id" => "orders#delete"
 
+  get "/carted_products" => "carted_products#index"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

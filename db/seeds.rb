@@ -9,3 +9,5 @@
 #   end
 @supplier = Supplier.new(name: "gihweg", email: "vuhwelcijw", phone_number: "32roi23o8r4ur")
 @supplier.save
+
+carted_product = Carted_products.new
