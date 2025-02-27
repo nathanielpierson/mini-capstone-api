@@ -3,6 +3,15 @@ class ProductsController < ApplicationController
     @products = Product.all
     render :index
   end
+  def show
+    the_id = params[:id]
+    @product = Product.find_by(id: the_id)
+    render :show
+  end
+  def show_cat
+    @products = Product.where(category_id: params[:id])
+    render :index
+  end
   def create
     @product = Product.create(
       name: params[:name],
@@ -15,11 +24,6 @@ class ProductsController < ApplicationController
       else
         render json: { message: "oops" }
       end
-  end
-  def show
-    the_id = params[:id]
-    @product = Product.find_by(id: the_id)
-    render :show
   end
   def update
     @product = Product.find_by(id: params[:id])
