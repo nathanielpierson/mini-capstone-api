@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   patch "/suppliers/:id" => "suppliers#update"
   delete "suppliers/:id" => "suppliers#destroy"
 
+  get "/categories" => "categories#index"
+  get "/categories/:id" => "categories#show"
+
   get "/images" => "images#index"
   patch "/images/:id" => "images#update"
 
