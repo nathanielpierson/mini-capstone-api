@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   validates :name, format: { with: /\A[a-zA-Z]+\z/,
   message: "only allows letters" }
   belongs_to :supplier
-  has_many :images
   has_many :category_products
   has_many :categories, through: :category_products
 
